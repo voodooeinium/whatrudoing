@@ -67,7 +67,7 @@ export default {
         return{
             showLoading: false,
             theme: '加班中。。。',
-            addMeTxt: 'Me Too',
+            addMeTxt: '修福报',
             showAddMeBtn: true,
             isUnfold: false,
             form: {
@@ -122,7 +122,7 @@ export default {
             var self = this;
             setTimeout(() => {
                 self.isUnfold = false;
-                self.addMeTxt = 'Me Too';
+                self.addMeTxt = '修福报';
             }, 0);
         }
     }
