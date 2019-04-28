@@ -1,5 +1,9 @@
 <template>
-    <div class="map-wrapper" v-loading="showLoading">
+    <div class="map-wrapper"
+    v-loading="showLoading"
+    element-loading-text="加载中"
+    element-loading-spinner="el-icon-loading"
+    element-loading-background="rgba(0, 0, 0, 0.8)">
         <l-map :theme="theme"></l-map>
         <div class="me-too-btn" :class="{'form-unfold':isUnfold}" @click="clickAddMe" v-show="showAddMeBtn">
             <div v-show="isUnfold" class="form-wrapper">
@@ -67,7 +71,7 @@ export default {
         return{
             showLoading: false,
             theme: '加班中。。。',
-            addMeTxt: 'Me Too',
+            addMeTxt: '修福报',
             showAddMeBtn: true,
             isUnfold: false,
             form: {
@@ -122,7 +126,7 @@ export default {
             var self = this;
             setTimeout(() => {
                 self.isUnfold = false;
-                self.addMeTxt = 'Me Too';
+                self.addMeTxt = '修福报';
             }, 0);
         }
     }
