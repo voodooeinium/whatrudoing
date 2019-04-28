@@ -1,5 +1,5 @@
 # 996_map
-### https://xiallyspider.github.io/whatrudoing/
+### 
 > 
 
 ## Build Setup
