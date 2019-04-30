@@ -80,7 +80,7 @@ export default {
                 pay: 0,
                 state: null,
                 nature: 0,
-                career: ''
+                career: []
             },
             sum: 1000,
             noPay: '40%',
