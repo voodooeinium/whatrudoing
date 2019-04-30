@@ -50,7 +50,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .map-wrapper{
     height: 100%;
     width: 100%;
