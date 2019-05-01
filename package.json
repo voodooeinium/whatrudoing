@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@mapbox/mapbox-gl-language": "^0.10.0",
     "element-ui": "^2.8.2",
     "html2canvas": "^1.0.0-rc.1",
     "leaflet": "^1.4.0",

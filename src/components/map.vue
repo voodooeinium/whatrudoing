@@ -3,48 +3,36 @@
 </template>
 
 <script>
-import L from 'leaflet'
 import config from '@/assets/config.js'
+import mapboxgl from 'mapbox-gl'
+import MapboxLanguage  from '@mapbox/mapbox-gl-language'
+import 'mapbox-gl/dist/mapbox-gl.css'
 export default {
-    props: {
-        theme: {
-            type: String,
-            default: ''
-        }
-    },
     data() {
         return {
             map: null
         }
     },
     mounted() {
-        this.initMap();
-        this.initTitleControl();
+        var mapStyle = "light-v9";
+        var hour = new Date().getHours();
+        if (Number(hour) > 16) mapStyle = "dark-v9";
+        this.initMap(mapStyle);
     },
     methods: {
-        initMap() {
-            var osmUrl = config.mapBaseUrl + config.style + '/tiles/256/{z}/{x}/{y}?access_token=' + config.token,
-                    osm = L.tileLayer(osmUrl, {
-                        maxZoom: 14,
-                        minZoom: 3
-                    });
-            this.map = new L.Map(this.$el, {
-                zoomControl: false,
-                attributionControl:false
-            }).addLayer(osm).setView(new L.LatLng(34, 120), 5);
-        },
-        initTitleControl() {
-            var self = this;
-            var titleControl = L.control({
-                position: 'topleft'
+        initMap(mapStyle) {
+            mapboxgl.accessToken = config.token;
+            this.map = new mapboxgl.Map({
+                container: this.$el,
+                style:'mapbox://styles/mapbox/' + mapStyle,
+                center: [115, 36],
+                maxZoom: 14,
+                minZoom: 3,
+                zoom: 4
             });
-            titleControl.onAdd = function() {
-                this.element = L.DomUtil.create('div', 'title-wrapper');
-                this.element.innerHTML = '<h2>What Are You Doing?</h2><span class="theme-txt">' + self.theme + '</span>';
-                console.log(self)
-                return this.element;
-            };
-            titleControl.addTo(this.map)
+            
+            var language = new MapboxLanguage({defaultLanguage: 'zh'});
+            this.map.addControl(language);
         }
     }
 }

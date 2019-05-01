@@ -17,7 +17,6 @@ import 'element-ui/lib/theme-chalk/index.css'
 import App from './App'
 import router from './router'
 import 'babel-polyfill'
-import 'leaflet/dist/leaflet.css'
 
 Vue.config.productionTip = false
 Vue.use(Form)
@@ -30,6 +29,8 @@ Vue.use(Option)
 Vue.use(Cascader)
 Vue.use(Button)
 Vue.use(Loading)
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

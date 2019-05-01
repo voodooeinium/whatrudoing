@@ -4,7 +4,15 @@
     element-loading-text="加载中"
     element-loading-spinner="el-icon-loading"
     element-loading-background="rgba(0, 0, 0, 0.8)">
-        <l-map :theme="theme"></l-map>
+        <l-map></l-map>
+        <div class="title-wrapper">
+            <p>{{preTitle}}<span class="title-txt">{{title}}</span></p>
+            <span class="sub-title-txt">{{subTitle}}</span>
+        </div>
+        <div class="share-wrapper">
+            <i class="el-icon-more"></i>
+            <i class="el-icon-share"></i>
+        </div>
         <div class="me-too-btn" :class="{'form-unfold':isUnfold}" @click="clickAddMe" v-show="showAddMeBtn">
             <div v-show="isUnfold" class="form-wrapper">
                 <el-form ref="form" :model="form" label-width="80px">
@@ -54,10 +62,10 @@
             </div>
             {{addMeTxt}}
         </div>
-        <div class="overtime-state-wrapper">
+        <!-- <div class="overtime-state-wrapper">
             <p class="sum-count">此时共有<span>{{sum}}</span>人在加班</p>
             <p class="no-pay-count">其中<span>{{noPay}}</span>的人没有加班工资</p>
-        </div>
+        </div> -->
         <div class='image-cover' v-show='imageVisible'>
             <img @click='closeImageModal' src='data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmZmZmIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0xOSA2LjQxTDE3LjU5IDUgMTIgMTAuNTkgNi40MSA1IDUgNi40MSAxMC41OSAxMiA1IDE3LjU5IDYuNDEgMTkgMTIgMTMuNDEgMTcuNTkgMTkgMTkgMTcuNTkgMTMuNDEgMTJ6Ii8+CiAgICA8cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+Cjwvc3ZnPgo=' alt='close' class='close-button'>
         </div>
@@ -75,8 +83,10 @@ export default {
     data() {
         return{
             showLoading: false,
-            theme: '加班中。。。',
-            addMeTxt: '修福报',
+            preTitle: '实时可视化问卷调查--',
+            title: '你是否正在加班？',
+            subTitle: '本次调查将持续两周，所有数据将在调查结束后公开，详情请查看',
+            addMeTxt: '填写',
             showAddMeBtn: true,
             isUnfold: false,
             form: {
@@ -132,7 +142,7 @@ export default {
             var self = this;
             setTimeout(() => {
                 self.isUnfold = false;
-                self.addMeTxt = '修福报';
+                self.addMeTxt = '填写';
             }, 0);
         },
         closeImageModal(){
@@ -193,8 +203,8 @@ export default {
     height: 330px;
     width: 30%;
     right: 40px;
-    /* opacity: 0.8; */
-    background-color: #fff;
+    opacity: 0.8; 
+    background-color: #FFF;
     border-radius: 7px;
     text-align: left;
 }
@@ -227,7 +237,6 @@ export default {
     color: #e8e94f;
     padding: 0 5px;
 }
-
 .image-cover{
     canvas{
         position: fixed;
@@ -237,6 +246,44 @@ export default {
         opacity: 1;
         z-index: 9999;
         transition: transform 0.3s cubic-bezier(0.42, 0, 0.58, 1) 0s, opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1) 0s, -webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1) 0s;
+    }
+}
+.title-wrapper{
+    position: absolute;
+    height: 100px;
+    width: 400px;
+    top: 0px;
+    left: 0px;
+    z-index: 2000;
+    p{
+        font-size: 16px;
+        color: #d6d4d4;
+        .title-txt{
+            font-size: 30px;
+            color: #e8e94f;
+        }
+    }
+    .sub-title-txt{
+        font-size: 12px;
+        color: #8fbdd7;
+    }
+}
+.share-wrapper{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    i{
+        height: 30px;
+        width: 30px;
+        margin: 30px 20px 0 0;
+        line-height: 30px;
+        text-align: center;
+        background-color: #d6d4d4;
+        border-radius: 50%;
+        cursor: pointer;
     }
 }
 </style>
