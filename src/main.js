@@ -11,7 +11,11 @@ import {
   Option,
   Cascader,
   Button,
-  Loading
+  Loading,
+  Popover,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem,
 } from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import App from './App'
@@ -30,6 +34,10 @@ Vue.use(Option)
 Vue.use(Cascader)
 Vue.use(Button)
 Vue.use(Loading)
+Vue.use(Popover)
+Vue.use(Dropdown)
+Vue.use(DropdownMenu)
+Vue.use(DropdownItem)
 
 Vue.use(BaiduMap, {
   ak: '1d65lMKmvPw1dgpZ6WyFkU0zGRtAKTBy'    //这个地方是官方提供的ak密钥

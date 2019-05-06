@@ -11,10 +11,36 @@
             <span class="sub-title-txt">{{subTitle}}</span>
         </div>
         <div class="share-wrapper">
-            <i class="el-icon-more"></i>
-            <i class="el-icon-share"></i>
+            
+            <el-dropdown trigger="click">
+                <span class="el-dropdown-link">
+                    <i class="el-icon-more"></i>
+                </span>
+                <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item>项目地址</el-dropdown-item>
+                    <el-dropdown-item>数据地址</el-dropdown-item>
+                </el-dropdown-menu>
+            </el-dropdown>
+             <el-dropdown trigger="click">
+                <span class="el-dropdown-link">
+                    <i class="el-icon-share"></i>
+                </span>
+                <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item>生成图片</el-dropdown-item>
+                    <el-dropdown-item>扫描二维码
+                        <img class="qrcode-container" src="../assets/imgs/QRCode.png" alt="二维码">
+                    </el-dropdown-item>
+                </el-dropdown-menu>
+            </el-dropdown>
         </div>
-
+        <el-popover
+        ref="popoverAbout"
+        placement="top-start"
+        title="标题"
+        width="80"
+        trigger="hover"
+        content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
+        </el-popover>
         <div class="me-too-btn" :class="{'form-unfold':isUnfold}" @click="clickAddMe" v-show="showAddMeBtn">
             <div v-show="isUnfold" class="form-wrapper">
                 <el-form ref="form" :model="form" label-width="80px">
@@ -281,6 +307,11 @@ export default {
 .bd-map-container{
     height: 100%;
     width: 100%;
+}
+.qrcode-container{
+    height: 80px;
+    width: 80px;
+    display: block;
 }
 </style>
 

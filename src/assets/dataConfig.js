@@ -114,9 +114,6 @@ var career =  [{
 	}, {
 		value: "300000",
 		label: "航空/航天研究与制造"
-	}, {
-		value: "120300",
-		label: "其他"
 	}]
 }, {
 	value: 10800,
