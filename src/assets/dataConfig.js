@@ -1,0 +1,214 @@
+var career =  [{
+	value: 10000,
+	label: "服务业",
+	children: [{
+		value: "121400",
+		label: "医疗/护理/美容/保健/卫生服务"
+	}, {
+		value: "200600",
+		label: "酒店/餐饮"
+	}, {
+		value: "200800",
+		label: "旅游/度假"
+	}]
+}, {
+	value: 10100,
+	label: "IT|通信|电子|互联网",
+	children: [{
+		value: "210500",
+		label: "互联网/电子商务"
+	}, {
+		value: "160400",
+		label: "计算机软件"
+	}, {
+		value: "160000",
+		label: "IT服务(系统/数据/维护)"
+	}, {
+		value: "160500",
+		label: "电子技术/半导体/集成电路"
+	}, {
+		value: "160200",
+		label: "计算机硬件"
+	}, {
+		value: "300100",
+		label: "通信/电信/网络设备"
+	}, {
+		value: "160100",
+		label: "通信/电信运营、增值服务"
+	}, {
+		value: "160600",
+		label: "网络游戏"
+	}]
+}, {
+	value: 10200,
+	label: "金融业",
+	children: [{
+		value: "180000",
+		label: "基金/证券/期货/投资"
+	}, {
+		value: "180100",
+		label: "保险"
+	}, {
+		value: "300500",
+		label: "银行"
+	}, {
+		value: "300900",
+		label: "信托/担保/拍卖/典当"
+	}]
+}, {
+	value: 10300,
+	label: "贸易|批发|零售|租赁业",
+	children: [{
+		value: "120400",
+		label: "快速消费品（食品/饮料/烟酒/日化）"
+	}, {
+		value: "120200",
+		label: "耐用消费品（服饰/纺织/皮革/家具/家电）"
+	}, {
+		value: "170500",
+		label: "贸易/进出口"
+	}, {
+		value: "170000",
+		label: "零售/批发"
+	}, {
+		value: "300700",
+		label: "租赁服务"
+	}]
+}, {
+	value: 10400,
+	label: "文体教育|工艺美术",
+	children: [{
+		value: "201100",
+		label: "教育/培训/院校"
+	}, {
+		value: "120800",
+		label: "礼品/玩具/工艺美术/收藏品/奢侈品"
+	}]
+}, {
+	value: 10500,
+	label: "生产|加工|制造",
+	children: [{
+		value: "121000",
+		label: "汽车/摩托车"
+	}, {
+		value: "129900",
+		label: "大型设备/机电设备/重工业"
+	}, {
+		value: "121100",
+		label: "加工制造（原料加工/模具）"
+	}, {
+		value: "121200",
+		label: "仪器仪表及工业自动化"
+	}, {
+		value: "210600",
+		label: "印刷/包装/造纸"
+	}, {
+		value: "120700",
+		label: "办公用品及设备"
+	}, {
+		value: "121300",
+		label: "医药/生物工程"
+	}, {
+		value: "121500",
+		label: "医疗设备/器械"
+	}, {
+		value: "300000",
+		label: "航空/航天研究与制造"
+	}, {
+		value: "120300",
+		label: "其他"
+	}]
+}, {
+	value: 10800,
+	label: "房地产|建筑业",
+	children: [{
+		value: "140000",
+		label: "房地产/建筑/建材/工程"
+	}, {
+		value: "140100",
+		label: "家居/室内设计/装饰装潢"
+	}, {
+		value: "140200",
+		label: "物业管理/商业中心"
+	}]
+}, {
+	value: 10900,
+	label: "商业服务",
+	children: [{
+		value: "200300",
+		label: "专业服务/咨询(财会/法律/人力资源等)"
+	}, {
+		value: "200302",
+		label: "广告/会展/公关"
+	}, {
+		value: "201400",
+		label: "中介服务"
+	}, {
+		value: "201300",
+		label: "检验/检测/认证"
+	}, {
+		value: "300300",
+		label: "外包服务"
+	}]
+}, {
+	value: 11100,
+	label: "政府|非盈利机构",
+	children: [{
+		value: "200100",
+		label: "政府/公共事业/非盈利机构"
+	}, {
+		value: "120600",
+		label: "学术/科研"
+	}]
+}, {
+	value: 11300,
+	label: "文化|传媒|娱乐|体育",
+	children: [{
+		value: "210300",
+		label: "媒体/出版/影视/文化传播"
+	}, {
+		value: "200700",
+		label: "娱乐/体育/休闲"
+	}]
+}, {
+	value: 11400,
+	label: "农|林|牧|渔|其他",
+	children: [{
+		value: "100000",
+		label: "农/林/牧/渔"
+	}, {
+		value: "100100",
+		label: "跨领域经营"
+	}, {
+		value: "990000",
+		label: "其他"
+	}]
+}, {
+	value: 11500,
+	label: "交通|运输|物流|仓储",
+	children: [{
+		value: "150000",
+		label: "交通/运输"
+	}, {
+		value: "301100",
+		label: "物流/仓储"
+	}]
+}, {
+	value: 11600,
+	label: "能源|矿产|环保",
+	children: [{
+		value: "130000",
+		label: "能源/矿产/采掘/冶炼"
+	}, {
+		value: "120500",
+		label: "石油/石化/化工"
+	}, {
+		value: "130100",
+		label: "电气/电力/水利"
+	}, {
+		value: "201200",
+		label: "环保"
+	}]
+}]
+
+module.exports = career;

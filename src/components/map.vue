@@ -14,9 +14,9 @@ export default {
         }
     },
     mounted() {
-        var mapStyle = "light-v9";
-        var hour = new Date().getHours();
-        if (Number(hour) > 16) mapStyle = "dark-v9";
+        var mapStyle = "dark-v9";
+        // var hour = new Date().getHours();
+        // if (Number(hour) > 16) mapStyle = "dark-v9";
         this.initMap(mapStyle);
     },
     methods: {

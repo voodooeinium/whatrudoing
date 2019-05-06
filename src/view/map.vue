@@ -5,6 +5,7 @@
     element-loading-spinner="el-icon-loading"
     element-loading-background="rgba(0, 0, 0, 0.8)">
         <l-map></l-map>
+        <!-- <baidu-map class="bd-map-container"></baidu-map> -->
         <div class="title-wrapper">
             <p>{{preTitle}}<span class="title-txt">{{title}}</span></p>
             <span class="sub-title-txt">{{subTitle}}</span>
@@ -13,6 +14,7 @@
             <i class="el-icon-more"></i>
             <i class="el-icon-share"></i>
         </div>
+
         <div class="me-too-btn" :class="{'form-unfold':isUnfold}" @click="clickAddMe" v-show="showAddMeBtn">
             <div v-show="isUnfold" class="form-wrapper">
                 <el-form ref="form" :model="form" label-width="80px">
@@ -48,7 +50,7 @@
                             </el-option>
                         </el-select>
                     </el-form-item>
-                    <el-form-item label="职业">
+                    <el-form-item label="行业">
                        <el-cascader
                             :options="career"
                             v-model="form.career">
@@ -75,7 +77,7 @@
 <script>
 import lMap from '@/components/map';
 import html2canvas from "html2canvas";
-
+import dataConfig from "@/assets/dataConfig.js"
 export default {
     components: {
         lMap
@@ -108,21 +110,12 @@ export default {
                 {value: 5, label: '中外合资企业'},
                 {value: 6, label: '外商投资企业'}
             ],
-            career: [
-                {value: 0, label: '技术', children: [
-                    {value: 1, label: '后端'},
-                    {value: 2, label: '前端'},
-                    {value: 3, label: '架构'}
-                ]},
-                {value: 1, label: '集体企业'},
-                {value: 2, label: '有限责任公司'},
-                {value: 3, label: '股份有限公司'},
-                {value: 4, label: '私营企业'},
-                {value: 5, label: '中外合资企业'},
-                {value: 6, label: '外商投资企业'}
-            ],
+            career: dataConfig,
             imageVisible: false // 是否展示预览图容器
         }
+    },
+    mounted(){
+        console.log('数据', this.career)
     },
     methods: {
         clickAddMe() {
@@ -202,8 +195,7 @@ export default {
 .form-unfold{
     height: 330px;
     width: 30%;
-    right: 40px;
-    opacity: 0.8; 
+    right: 40px; 
     background-color: #FFF;
     border-radius: 7px;
     text-align: left;
@@ -285,6 +277,10 @@ export default {
         border-radius: 50%;
         cursor: pointer;
     }
+}
+.bd-map-container{
+    height: 100%;
+    width: 100%;
 }
 </style>
 

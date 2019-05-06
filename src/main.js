@@ -17,6 +17,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import App from './App'
 import router from './router'
 import 'babel-polyfill'
+import BaiduMap from 'vue-baidu-map'
 
 Vue.config.productionTip = false
 Vue.use(Form)
@@ -30,6 +31,9 @@ Vue.use(Cascader)
 Vue.use(Button)
 Vue.use(Loading)
 
+Vue.use(BaiduMap, {
+  ak: '1d65lMKmvPw1dgpZ6WyFkU0zGRtAKTBy'    //这个地方是官方提供的ak密钥
+})
 
 /* eslint-disable no-new */
 new Vue({
