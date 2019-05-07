@@ -4,14 +4,13 @@
     element-loading-text="加载中"
     element-loading-spinner="el-icon-loading"
     element-loading-background="rgba(0, 0, 0, 0.8)">
-        <!-- <l-map></l-map> -->
-        <baidu-map class="bd-map-container"></baidu-map>
+        <l-map></l-map>
+        <!-- <baidu-map class="bd-map-container"></baidu-map> -->
         <div class="title-wrapper">
             <p>{{preTitle}}<span class="title-txt">{{title}}</span></p>
             <span class="sub-title-txt">{{subTitle}}</span>
         </div>
-        <div class="share-wrapper">
-            
+        <div class="share-wrapper">            
             <el-dropdown trigger="click">
                 <span class="el-dropdown-link">
                     <i class="el-icon-more"></i>
