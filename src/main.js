@@ -16,6 +16,7 @@ import {
   Dropdown,
   DropdownMenu,
   DropdownItem,
+  Dialog
 } from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import App from './App'
@@ -38,9 +39,10 @@ Vue.use(Popover)
 Vue.use(Dropdown)
 Vue.use(DropdownMenu)
 Vue.use(DropdownItem)
+Vue.use(Dialog)
 
 Vue.use(BaiduMap, {
-  ak: '1d65lMKmvPw1dgpZ6WyFkU0zGRtAKTBy'    //这个地方是官方提供的ak密钥
+  ak: '1d65lMKmvPw1dgpZ6WyFkU0zGRtAKTBy' //这个地方是官方提供的ak密钥
 })
 
 /* eslint-disable no-new */
