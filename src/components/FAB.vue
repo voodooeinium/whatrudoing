@@ -1,7 +1,6 @@
 <template>
   <div>
     <fab :position="position" :bg-color="bgColor" :actions="fabActions" @edit="edit" @share="alert" :main-tooltip="mainTooltip"></fab>
-
   </div>
 </template>
 

@@ -16,7 +16,9 @@ import {
   Dropdown,
   DropdownMenu,
   DropdownItem,
-  Dialog
+  Dialog,
+  Input,
+  InputNumber,
 } from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import App from './App'
@@ -40,6 +42,8 @@ Vue.use(Dropdown)
 Vue.use(DropdownMenu)
 Vue.use(DropdownItem)
 Vue.use(Dialog)
+Vue.use(Input)
+Vue.use(InputNumber)
 
 Vue.use(BaiduMap, {
   ak: '1d65lMKmvPw1dgpZ6WyFkU0zGRtAKTBy' //这个地方是官方提供的ak密钥

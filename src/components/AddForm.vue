@@ -1,32 +1,53 @@
 <template>
   <div>
-    <el-dialog title="提示" :visible="visible" width="30%" @update:visible="$emit('update:visible', $event)">
-      <el-form ref="form" :model="form" label-width="80px">
-        <el-form-item label="时间">
-          <el-time-picker v-model="form.start" :picker-options="{
-                                selectableRange: '17:00:00 - 23:59:59'
-                            }" placeholder="开始时间">
-          </el-time-picker>
-          <el-time-picker v-model="form.end" :picker-options="{
-                                selectableRange: '17:00:00 - 23:59:59'
-                            }" placeholder="结束时间">
-          </el-time-picker>
-        </el-form-item>
-        <el-form-item label="加班费用">
-          <el-radio-group v-model="form.pay">
-            <el-radio :label="0">无</el-radio>
-            <el-radio :label="1">有</el-radio>
-          </el-radio-group>
+    <el-dialog title="加班情况问卷调查" :visible="visible" width="33%" @update:visible="$emit('update:visible', $event)">
+      <el-form ref="form" :model="form" label-width="140px">
+        <el-form-item label="加班时间">
+            <el-time-picker
+                v-model="form.startTime"
+                :picker-options="{
+                    selectableRange: '17:00:00 - 23:59:59'
+                }"
+                placeholder="开始时间">
+            </el-time-picker>
+            <el-time-picker
+                v-model="form.endTime"
+                :picker-options="{
+                    selectableRange: '17:00:00 - 23:59:59'
+                }"
+                placeholder="结束时间">
+            </el-time-picker>
         </el-form-item>
         <el-form-item label="企业性质">
-          <el-select v-model="form.nature" placeholder="请选择">
-            <el-option v-for="item in natureOfBussiness" :key="item.value" :label="item.label" :value="item.value">
-            </el-option>
-          </el-select>
+            <el-select v-model="form.nature" placeholder="请选择">
+                <el-option
+                v-for="item in natureOfBussiness"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+                </el-option>
+            </el-select>
         </el-form-item>
         <el-form-item label="行业">
-          <el-cascader :options="career" v-model="form.career">
-          </el-cascader>
+            <el-cascader
+                :options="industry"
+                v-model="form.industry ">
+            </el-cascader>
+        </el-form-item>
+        <el-form-item label="职业">
+            <el-input v-model="form.career" placeholder="请填写职业"></el-input>
+        </el-form-item>
+        <el-form-item label="每周平均加班(小时)">
+            <el-input-number v-model="form.hour"  :min="0" :max="100" controls-position="right"></el-input-number>
+        </el-form-item>
+        <el-form-item label="工作年限（年）">
+            <el-input-number v-model="form.year"  :min="0" :max="44" controls-position="right" ></el-input-number>
+        </el-form-item>
+        <el-form-item label="薪资范围(元/每月)">
+            <el-input-number v-model="form.monthlyPay"  :min="0" controls-position="right" :step="1000" ></el-input-number>
+        </el-form-item>
+        <el-form-item label="生活满意度(0-100)">
+            <el-input-number v-model="form.satisfaction"  :min="0" :max="100" controls-position="right" :step="10" ></el-input-number>
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
@@ -49,14 +70,19 @@ export default {
   },
   data() {
     return {
-      career: dataConfig,
+      industry: dataConfig,
       form: {
-        start: "",
-        end: "",
-        pay: 0,
-        state: null,
-        nature: 0,
-        career: []
+          startTime: '',
+          endTime: '',
+          nature: 0,
+          industry: [],
+          career: '',
+          year: 0,
+          hour: 0,
+          monthlyPay: 0,
+          satisfaction: 0,
+          city: '',
+          latlng: []
       },
       natureOfBussiness: [
         { value: 0, label: "国有企业" },

@@ -28,7 +28,7 @@ export default {
                 center: [115, 36],
                 maxZoom: 14,
                 minZoom: 3,
-                zoom: 4
+                zoom: 3.7
             });
             
             var language = new MapboxLanguage({defaultLanguage: 'zh'});
@@ -38,23 +38,23 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
 .map-wrapper{
     height: 100%;
     width: 100%;
     overflow: hidden;
-}
-.title-wrapper{
-    height: 100px;
-    width: 400px;
-    color: aliceblue;
-}
-.title-wrapper h2{
-    color: #d6d4d4;
-}
-.theme-txt{
-    font-size: 40px;
-    font-display: 'none';
-    color: #e8e94f;
+    .title-wrapper{
+        height: 100px;
+        width: 400px;
+        color: aliceblue;
+        h2{
+            color: #d6d4d4;
+        }
+    }
+    .theme-txt{
+        font-size: 40px;
+        font-display: 'none';
+        color: #e8e94f;
+    }
 }
 </style>
